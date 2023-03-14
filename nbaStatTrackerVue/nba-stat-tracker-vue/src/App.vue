@@ -16,3 +16,28 @@
 </template>
 
 
+<script>
+
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      playerName: '',
+      playerStats: null
+    }
+  },
+  methods: {
+    searchPlayer() {
+      axios.get(`/api/players/<player_name>/'${this.playerName}`)
+        .then(response => {
+          this.playerStats = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+}
+</script>
+

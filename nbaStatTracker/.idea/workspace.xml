@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/components/HelloWorld.vue" afterDir="false" />
-    </list>
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,13 +24,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2MzTOHxvweqZWyThB811z2DaFIA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -104,8 +101,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678769378745</updated>
-      <workItem from="1678769393058" duration="5109000" />
+      <workItem from="1678769393058" duration="5411000" />
     </task>
+    <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
+      <created>1678776919283</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678776919283</updated>
+    </task>
+    <task id="LOCAL-00002" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
+      <created>1678777030158</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678777030158</updated>
+    </task>
+    <task id="LOCAL-00003" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
+      <created>1678777061372</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678777061372</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,11 +151,11 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="ab218a90-e6c3-4659-8097-18520fc4c45f" value="TOOL_WINDOW" />
-      </map>
-    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
+    <option name="LAST_COMMIT_MESSAGE" value="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
