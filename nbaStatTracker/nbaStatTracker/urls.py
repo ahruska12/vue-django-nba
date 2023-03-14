@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from StatTracker.getPlayer import player_stats
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/players/<str:player_name>/', player_stats),
 ]
