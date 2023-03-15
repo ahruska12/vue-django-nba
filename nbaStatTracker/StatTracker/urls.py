@@ -1,7 +1,6 @@
 from django.urls import path
-from .getPlayer import player_stats
-
-#urlpatterns = [
- #   path('api/players/<str:player_name>/', player_stats),
-  #  # other URL patterns here...
-#]
+from .getPlayer import get_player_stats
+urlpatterns = [
+    path('players/<str:player_id>/', get_player_stats),
+    # other URL patterns here...
+]

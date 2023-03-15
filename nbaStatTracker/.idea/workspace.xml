@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/getPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/getPlayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/aidenhruska/Desktop/Spring_2023/Full_Stack/vue-django-nba/nbaStatTracker",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -102,6 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678769378745</updated>
       <workItem from="1678769393058" duration="5411000" />
+      <workItem from="1678837985855" duration="6190000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>
@@ -162,13 +170,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/StatTracker/getPlayer.py</url>
-          <line>14</line>
+          <line>20</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/nbaStatTracker$getPlayer.coverage" NAME="getPlayer Coverage Results" MODIFIED="1678776440391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StatTracker" />
+    <SUITE FILE_PATH="coverage/nbaStatTracker$getPlayer.coverage" NAME="getPlayer Coverage Results" MODIFIED="1678857372538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StatTracker" />
   </component>
 </project>
