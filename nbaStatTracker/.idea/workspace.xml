@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/getPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/getPlayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678769378745</updated>
       <workItem from="1678769393058" duration="5411000" />
-      <workItem from="1678837985855" duration="6190000" />
+      <workItem from="1678837985855" duration="6263000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>
@@ -132,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678777061372</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="got stats working, need to figure out how to link to vue">
+      <created>1678858757704</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678858757704</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +164,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
-    <option name="LAST_COMMIT_MESSAGE" value="need to get player stats, got it working but having trouble with the returning JsonResponse funtion" />
+    <MESSAGE value="got stats working, need to figure out how to link to vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="got stats working, need to figure out how to link to vue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
