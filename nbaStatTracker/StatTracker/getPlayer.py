@@ -1,6 +1,7 @@
 import numpy as np
 import requests
 from nba_api.stats.endpoints import commonplayerinfo, playercareerstats, playergamelog
+from nba_api.stats.library.data import players
 from django.http import JsonResponse
 import math
 
