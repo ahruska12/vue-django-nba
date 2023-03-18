@@ -28,16 +28,17 @@ export default {
     }
   },
   methods: {
-    searchPlayer() {
-      axios.get(`/api/players/<player_name>/'${this.playerName}`)
+    getPlayerStats() {
+      axios.get(`http://localhost:8000/players/${this.playerName}`)
         .then(response => {
           this.playerStats = response.data;
         })
         .catch(error => {
-          console.log(error);
+          console.error(error);
         });
-    }
+    },
   }
 }
+
 </script>
 
