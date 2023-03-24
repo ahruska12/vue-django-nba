@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
-      <change afterPath="$PROJECT_DIR$/StatTracker/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load_nba_players/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/getPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/getPlayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatTracker/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaStatTracker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../nbaStatTrackerVue/nba-stat-tracker-vue/src/App.vue" afterDir="false" />
-    </list>
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +127,7 @@
       <updated>1678769378745</updated>
       <workItem from="1678769393058" duration="5411000" />
       <workItem from="1678837985855" duration="6263000" />
-      <workItem from="1678926147990" duration="2814000" />
+      <workItem from="1678926147990" duration="2877000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>
@@ -171,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678858757704</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="got stats working, need to figure out how to link to vue">
+      <created>1679155961159</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679155961159</updated>
+    </task>
+    <task id="LOCAL-00006" summary="got stats working, need to figure out how to link to vue">
+      <created>1679155979706</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679155979706</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
