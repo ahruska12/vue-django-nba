@@ -32,17 +32,22 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size: 16;
 }
 
 nav {
   padding: 30px;
+  background-color: rgb(35, 35, 35);
+  color:azure;
+  text-shadow: 2px 2px 2px black;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: azure;
+    font-size:16;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #3e72d3;
     }
   }
 }
