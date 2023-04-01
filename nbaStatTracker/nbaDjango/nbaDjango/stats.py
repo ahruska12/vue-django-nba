@@ -41,18 +41,9 @@ for nba_player in nba_players:
                     )
     player.save()
 
-
-
-
-
-
-
-
-
-
 """This is the ideal function for getting player name & assigning a team to them however 
     it keeps timing out..."""
-#for nba_player in nba_players:
+# for nba_player in nba_players:
 #    player_info = commonplayerinfo.CommonPlayerInfo(player_id=nba_player['id'])
 #    player_data = player_info.common_player_info.get_dict()['data']
 #    # team = Team.objects.get(abbreviation=player_data['TEAM_ABBREVIATION'])
