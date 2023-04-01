@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue" />
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0002_auto_20230401_0239.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/Activate.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate.csh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate.fish" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip3.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python3.10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/pyvenv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/getPlayer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatTracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_nba_players/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaStatTracker/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/wsgi.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,17 +76,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/aidenhruska/Desktop/Spring_2023/Full_Stack/vue-django-nba/nbaStatTracker&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/aidenhruska/Desktop/Spring_2023/Full_Stack/vue-django-nba/nbaStatTracker",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
-  <component name="RunManager" selected="Python.playerStatSave">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/nbaDjango/nbaDjango" />
+      <recent name="$PROJECT_DIR$/nbaDjango/nbaApp" />
+      <recent name="$PROJECT_DIR$/nbaDjango" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.stats">
     <configuration name="getPlayer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nbaStatTracker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,6 +140,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="stats" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="nbaStatTracker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nbaDjango/nbaApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="nbaStatTracker" type="Python.DjangoServer" factoryName="Django server">
       <module name="nbaStatTracker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,6 +188,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.stats" />
         <item itemvalue="Python.playerStatSave" />
         <item itemvalue="Python.getPlayer" />
       </list>
@@ -128,6 +205,7 @@
       <workItem from="1678769393058" duration="5411000" />
       <workItem from="1678837985855" duration="6263000" />
       <workItem from="1678926147990" duration="2877000" />
+      <workItem from="1680294649618" duration="18366000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>
@@ -219,5 +297,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nbaStatTracker$getPlayer.coverage" NAME="getPlayer Coverage Results" MODIFIED="1678926937444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StatTracker" />
     <SUITE FILE_PATH="coverage/nbaStatTracker$playerStatSave.coverage" NAME="playerStatSave Coverage Results" MODIFIED="1678927824643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/StatTracker" />
+    <SUITE FILE_PATH="coverage/nbaStatTracker$stats.coverage" NAME="stats Coverage Results" MODIFIED="1680305559034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nbaDjango/nbaApp" />
   </component>
 </project>
