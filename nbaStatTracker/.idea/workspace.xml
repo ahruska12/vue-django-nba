@@ -1,52 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0002_auto_20230401_0239.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/Activate.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate.csh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/activate.fish" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/pip3.10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/bin/python3.10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/vue_env/pyvenv.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/getPlayer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatTracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_nba_players/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaStatTracker/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/wsgi.py" afterDir="false" />
-    </list>
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +160,7 @@
       <workItem from="1678769393058" duration="5411000" />
       <workItem from="1678837985855" duration="6263000" />
       <workItem from="1678926147990" duration="2877000" />
-      <workItem from="1680294649618" duration="18366000" />
+      <workItem from="1680294649618" duration="18703000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>
