@@ -21,15 +21,12 @@ class TeamList(admin.ModelAdmin):
 
 class PlayerList(admin.ModelAdmin):
     list_display = ('name',
-                    'team',
                     )
     list_filter = ('name',
-                   'team',
                    )
     search_fields = ('name',
-                     'team',
                      )
-    ordering = ['team']
+    ordering = ['name']
 
 
 admin.site.register(Team, TeamList)

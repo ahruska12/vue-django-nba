@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue" />
+    <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1fd10581-f922-452f-9903-00d64e32bb22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/445dfd53-4793-4143-ad30-cd6973b687a3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/445dfd53-4793-4143-ad30-cd6973b687a3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0002_auto_20230401_0239.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0003_auto_20230401_0250.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +50,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/aidenhruska/Desktop/Spring_2023/Full_Stack/vue-django-nba/nbaStatTracker",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -161,6 +174,7 @@
       <workItem from="1678837985855" duration="6263000" />
       <workItem from="1678926147990" duration="2877000" />
       <workItem from="1680294649618" duration="18703000" />
+      <workItem from="1680334399530" duration="4453000" />
     </task>
     <task id="LOCAL-00001" summary="need to get player stats, got it working but having trouble with the returning JsonResponse funtion">
       <created>1678776919283</created>

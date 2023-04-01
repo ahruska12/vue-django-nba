@@ -15,6 +15,6 @@ class Team(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=100, default="null")
-    team = models.CharField(max_length=50)
+    #team = models.CharField(max_length=50)
     #team = models.ForeignKey(Team, on_delete=models.CASCADE)
 
