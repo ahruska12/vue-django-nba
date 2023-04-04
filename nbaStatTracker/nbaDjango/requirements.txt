@@ -6,3 +6,4 @@ djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
 PyJWT==1.7.1
 pytz==2020.1
+nba_api==1.2

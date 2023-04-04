@@ -19,11 +19,19 @@ class TeamSerializer(serializers.ModelSerializer):
 
 
 class PlayerSerializer(serializers.ModelSerializer):
-    #team = serializers.SlugRelatedField(slug_field='name', queryset=Team.objects.all())
+    team = serializers.SlugRelatedField(slug_field='name', queryset=Team.objects.all())
+
     class Meta:
         model = Player
         fields = ('pk',
                   'name',
+                  'team',
+                  'points',
+                  'rebounds',
+                  'assists',
+                  'steals',
+                  'blocks',
+                  'games_played'
                   )
 
 

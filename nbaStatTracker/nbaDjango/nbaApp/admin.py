@@ -21,10 +21,19 @@ class TeamList(admin.ModelAdmin):
 
 class PlayerList(admin.ModelAdmin):
     list_display = ('name',
+                    'team'
                     )
-    list_filter = ('name',
-                   )
+    list_filter = ('team',
+                   'points')
+
     search_fields = ('name',
+                     'team',
+                     'points',
+                     'rebounds',
+                     'assists',
+                     'steals',
+                     'blocks',
+                     'games_played',
                      )
     ordering = ['name']
 

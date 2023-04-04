@@ -15,6 +15,11 @@ class Team(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=100, default="null")
-    #team = models.CharField(max_length=50)
-    #team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    points = models.IntegerField(default=0)
+    rebounds = models.IntegerField(default=0)
+    assists = models.IntegerField(default=0)
+    steals = models.IntegerField(default=0)
+    blocks = models.IntegerField(default=0)
+    games_played = models.IntegerField(default=0)
 
