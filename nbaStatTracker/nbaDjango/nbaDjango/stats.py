@@ -13,7 +13,7 @@ django.setup()
 # script
 
 from nba_api.stats.static import teams, players
-from nba_api.stats.endpoints import commonplayerinfo, playergamelog
+from nba_api.stats.endpoints import commonplayerinfo, playergamelog, teaminfocommon
 from nbaApp.models import Team, Player
 import json
 
@@ -24,12 +24,36 @@ nba_teams = teams.get_teams()
 # get nba teams into local database
 
 for nba_team in nba_teams:
-    team = Team(name=nba_team['full_name'],
-                abbreviation=nba_team['abbreviation'],
-                city=nba_team['city'],
-                state=nba_team['state']
+    team_id = nba_team['id']
+    name = nba_team['full_name']
+    abbreviation = nba_team['abbreviation']
+    city = nba_team['city']
+    state = nba_team['state']
+    team_info = teaminfocommon.TeamInfoCommon(team_id=nba_team['id']).get_dict()
+    conference = team_info['resultSets'][0]['rowSet'][0][5]
+    division = team_info['resultSets'][0]['rowSet'][0][6]
+    wins = team_info['resultSets'][0]['rowSet'][0][9]
+    losses = team_info['resultSets'][0]['rowSet'][0][10]
+    team_ppg = team_info['resultSets'][1]['rowSet'][0][4]
+    team_rpg = team_info['resultSets'][1]['rowSet'][0][6]
+    team_apg = team_info['resultSets'][1]['rowSet'][0][8]
+    opp_ppg = team_info['resultSets'][1]['rowSet'][0][10]
+    team = Team(team_id=team_id,
+                name=name,
+                abbreviation=abbreviation,
+                city=city,
+                state=state,
+                conference=conference,
+                division=division,
+                wins=wins,
+                losses=losses,
+                team_ppg=team_ppg,
+                team_rpg=team_rpg,
+                team_apg=team_apg,
+                opp_ppg=opp_ppg
                 )
     team.save()
+    time.sleep(.5)
 
 # get list of all players and info
 
@@ -60,6 +84,7 @@ for nba_player in nba_players:
         team = Team.objects.get(abbreviation=player_data[0][20])
         # this grabs the current player's stats for the season and sums them up, ideally we can
         # divide the number of points by the number of games played to get the average of each stat
+        player_id = nba_player['id']
         games_played = len(data)
         points = data['PTS'].sum()
         rebounds = data['REB'].sum()
@@ -67,7 +92,8 @@ for nba_player in nba_players:
         steals = data['STL'].sum()
         blocks = data['BLK'].sum()
         # creating the player object
-        player = Player(name=player_data[0][3],
+        player = Player(player_id=player_id,
+                        name=player_data[0][3],
                         team=team,
                         points=points,
                         rebounds=rebounds,
@@ -79,7 +105,7 @@ for nba_player in nba_players:
         print(f"Player {x} Created")
         # ran into an issue where it was going too fast and kept timing out
         # needed to add a 5-second delay after each player, and it works
-        time.sleep(5)
+        time.sleep(1)
         x = x + 1
     except Team.DoesNotExist:
         # NBA api is very up-to-date, players get cut all the time and when they do,
@@ -87,3 +113,5 @@ for nba_player in nba_players:
         print(f"Skipping player {player_data[0][3]}")
 
 # assigning stats to specific players
+
+

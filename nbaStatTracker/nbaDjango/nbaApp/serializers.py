@@ -10,11 +10,19 @@ from rest_framework.validators import UniqueValidator
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ('pk',
+        fields = ('team_id',
                   'name',
                   'abbreviation',
                   'city',
-                  'state'
+                  'state',
+                  'conference',
+                  'division',
+                  'wins',
+                  'losses',
+                  'team_ppg',
+                  'team_rpg',
+                  'team_apg',
+                  'opp_ppg'
                   )
 
 
@@ -23,7 +31,7 @@ class PlayerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Player
-        fields = ('pk',
+        fields = ('player_id',
                   'name',
                   'team',
                   'points',
