@@ -21,12 +21,17 @@ const routes = [
           path: '/Player/:id',
           name: 'PlayerStats',
           component: () => import('../components/PlayerStats')
-      },
-      {
-        path: '/Team/:id',
-        name: 'TeamStats',
-        component: () => import('../components/TeamStats')
-      }
+      }//,
+      // {
+        // path: '/AuthUser',
+        // name: 'AuthUser',
+        // component: () => import('../components/AuthUser')
+      // },
+      // {
+        // path: '/RegisterUser',
+        // name: 'RegisterUser',
+        // component: () => import('../components/RegisterUser')
+      // }
 ]
 
 

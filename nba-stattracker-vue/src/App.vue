@@ -14,6 +14,17 @@
                 <li class="nav-item">
                   <router-link class="nav-link pr-3" to="/TeamList">Team List</router-link>
                 </li>
+                <!--
+                <li class="nav-item" v-if="!authenticated" @click="login" >
+                  <router-link :to="{name: 'Auth'}">Log in</router-link>
+                </li>
+                <li class="nav-item" v-if="!authenticated" @click="register" >
+                  <router-link :to="{name: 'Register'}">Register</router-link>
+                </li>
+                <li class="nav-item  .justify-content-end" v-if="authenticated" @click="logout" >
+                  <router-link :to="{name: 'Auth'}">Logout</router-link>
+                </li>
+              -->
               </ul>
           </div>
         </nav>
@@ -23,6 +34,39 @@
   </main>
   </div>
 </template>
+
+
+<script>
+    import router from './router';
+     // import {APIService} from './http/APIService';
+     // const apiService = new APIService();
+
+
+    export default {
+        name: 'App',
+        data: () => ({
+            authenticated: false,
+            dialog: false,
+            menu: [
+                { title: 'HomePage', url:"/"},
+            ]
+        }),
+        methods: {
+            logout() {
+                localStorage.removeItem('isAuthenticates');
+                localStorage.removeItem('log_user');
+                localStorage.removeItem('token');
+                this.authenticated = false;
+                // router.push('/');
+                window.location = "/"
+            },
+            login() {
+                router.push("/auth");
+            },
+        }
+    };
+</script>
+
 
 
 <style lang="scss">

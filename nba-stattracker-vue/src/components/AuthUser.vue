@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   
     <div class="container">
       <div class="row align-items-center justify-content-center">
@@ -111,7 +111,7 @@
   
   
   export default {
-      name: 'Auth',
+      name: 'AuthUser',
   
   
       data: () => ({
@@ -141,7 +141,7 @@
               localStorage.setItem('token', res.data.token);
               localStorage.setItem('isAuthenticates', JSON.stringify(true));
               localStorage.setItem('log_user', JSON.stringify(this.credentials.username));
-              //router.push("/");
+              router.push("/");
               //router.go(-1);
                window.location = "/"
             }).catch(e => {

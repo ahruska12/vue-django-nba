@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
             <div class="col col-12 col-sm-6 col-md-10 col-lg-6">
@@ -11,7 +11,6 @@
 
                     <div class="card-body">
                         <div class="row align-items-center justify-content-center" v-if="loading">
-                            <!-- Creating the progress bar -->
                             <div class="progress">
                             <div
                                 class="
@@ -25,7 +24,6 @@
                             ></div>
                             </div>
                         </div>   
-                   <!-- Input Field Section -->
                         <form v-else ref="form">
                             <div class="container-fuild">
 
@@ -87,7 +85,7 @@
   const apiService = new APIService();
 
   export default {
-    name: 'Register',
+    name: 'RegisterUser',
 
     data: () => ({
       credentials: {},
@@ -122,13 +120,13 @@
           if (response.status === 201) {
             this.movie = response.data;
             this.showMsg = "";
-            router.push('/auth/');
+            router.push('/AuthUser/');
           }else{
             this.showMsg = "error";
           }
         }).catch(error => {
           if (error.response.status === 401) {
-            router.push("/auth");
+            router.push("/AuthUser");
           }else if (error.response.status === 400) {
             this.showMsg = "error";
           }
