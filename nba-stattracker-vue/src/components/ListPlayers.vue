@@ -26,9 +26,10 @@
                     </div>
 
 
-                    <div :id="'collapse' + player.pk" class="collapse" :aria-labelledby="'heading' + customer.pk" data-bs-parent="#collapsable-card">
+                    <div :id="'collapse' + player.pk" class="collapse" :aria-labelledby="'heading' + player.pk" data-bs-parent="#collapsable-card">
                         <div class="card-body">
-                            <p><b>Customer #:</b> {{player.player_id}}</p>
+                            <p><b>Player #:</b> {{player.player_id}}</p>
+                            <p><b>Name:</b> {{player.name}}</p>
                             <p><b>Information:</b> <br/> {{player.team}}, <br/> {{player.points}}, <br/> {{player.rebounds}} {{player.assists}}</p>
                             <p><b>{{player.steals}}</b> <b>{{player.blocks}}</b> <b>{{player.games_played}}</b></p>
                             </div>
