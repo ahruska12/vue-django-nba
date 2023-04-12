@@ -10,7 +10,7 @@ export class APIService {
     const url = `${API_URL}/api/teams/${param_pk}`;
     let jwtToken = localStorage.getItem('token');
     console.log(":::jwtToken:::::"+jwtToken);
-    const headers = {Authorization: `jwt ${jwtToken}`};
+    // const headers = {Authorization: `jwt ${jwtToken}`};
     return axios.get(url, {headers: {Authorization: `jwt ${jwtToken}`}});
   }
 

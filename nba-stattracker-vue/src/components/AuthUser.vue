@@ -1,4 +1,4 @@
-<!--<template>
+<template>
   
     <div class="container">
       <div class="row align-items-center justify-content-center">
@@ -144,14 +144,14 @@
               router.push("/");
               //router.go(-1);
                window.location = "/"
-            }).catch(e => {
-              this.loading = false;
-              localStorage.removeItem('isAuthenticates');
-              localStorage.removeItem('log_user');
-              localStorage.removeItem('token');
+            // }).catch(e => {
+              // this.loading = false;
+              // localStorage.removeItem('isAuthenticates');
+              // localStorage.removeItem('log_user');
+              // localStorage.removeItem('token');
              // router.go(-1);
-              this.showMsg = 'error';
-            })
+              // this.showMsg = 'error';
+             })
           }
         }
       }

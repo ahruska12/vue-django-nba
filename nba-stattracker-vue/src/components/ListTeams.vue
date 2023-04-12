@@ -89,7 +89,7 @@
 
 
 
-<!--<script>
+<script>
 
 
     import router from '../router';
@@ -125,7 +125,7 @@
 
         }),
         mounted() {
-            // this.getTeams();
+            this.getTeams();
             this.showMessages();
         },
         methods: {
@@ -161,7 +161,7 @@
         }
     }
 </script>
--->
+
 
 <style>
     button {

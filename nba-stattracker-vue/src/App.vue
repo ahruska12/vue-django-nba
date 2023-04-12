@@ -14,17 +14,16 @@
                 <li class="nav-item">
                   <router-link class="nav-link pr-3" to="/TeamList">Team List</router-link>
                 </li>
-                <!--
                 <li class="nav-item" v-if="!authenticated" @click="login" >
-                  <router-link :to="{name: 'Auth'}">Log in</router-link>
+                  <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Log in</router-link>
                 </li>
                 <li class="nav-item" v-if="!authenticated" @click="register" >
-                  <router-link :to="{name: 'Register'}">Register</router-link>
+                  <router-link class="nav-link pr-3" :to="{name: 'RegisterUser'}">Register</router-link>
                 </li>
                 <li class="nav-item  .justify-content-end" v-if="authenticated" @click="logout" >
-                  <router-link :to="{name: 'Auth'}">Logout</router-link>
+                  <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Logout</router-link>
                 </li>
-              -->
+              
               </ul>
           </div>
         </nav>

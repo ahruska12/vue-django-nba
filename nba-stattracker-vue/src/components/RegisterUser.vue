@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
             <div class="col col-12 col-sm-6 col-md-10 col-lg-6">
