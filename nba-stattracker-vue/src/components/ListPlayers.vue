@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <p><b>Player #:</b> {{player.player_id}}</p>
                             <p><b>Name:</b> {{player.name}}</p>
-                            <p><b>Information:</b> <br/> {{player.team}}, <br/> {{player.points}}, <br/> {{player.rebounds}} {{player.assists}}</p>
+                            <p><b>Information:</b> <br/> {{player.team}}, <br/> {{player.points}}, <br/> {{player.rebounds}} <br/> {{player.assists}} </p>
                             <p><b>{{player.steals}}</b> <b>{{player.blocks}}</b> <b>{{player.games_played}}</b></p>
                             </div>
                         </div>
@@ -89,24 +89,23 @@
 
 
     export default {
-        name: "CustomerList",
+        name: "PlayerList",
         data: () => ({
-            customers: [],
+            players: [],
             validUserName: "Guest",
-            customerSize: 0,
+            playerSize: 0,
             showMsg: '',
             isMobile: false,
             headers: [
-                {text: 'Customer Number', sortable: false, align: 'left',},
+                {text: 'Player ID', sortable: false, align: 'left',},
                 {text: 'Name', sortable: false, align: 'left',},
-                {text: 'Address', sortable: false, align: 'left',},
-                {text: 'City', sortable: false, align: 'left',},
-                {text: 'State', sortable: false, align: 'left',},
-                {text: 'ZipCode', sortable: false, align: 'left',},
-                {text: 'Email', sortable: false, align: 'left',},
-                {text: 'Phone', sortable: false, align: 'left',},
-                {text: 'Update', sortable: false, align: 'left',},
-                {text: 'Delete', sortable: false, align: 'left',}
+                {text: 'Team', sortable: false, align: 'left',},
+                {text: 'Points', sortable: false, align: 'left',},
+                {text: 'Rebounds', sortable: false, align: 'left',},
+                {text: 'Assists', sortable: false, align: 'left',},
+                {text: 'Steals', sortable: false, align: 'left',},
+                {text: 'Blocks', sortable: false, align: 'left',},
+                {text: 'Games Played', sortable: false, align: 'left',}
             ],
 
 

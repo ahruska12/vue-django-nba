@@ -98,30 +98,34 @@
 
 
     export default {
-        name: "CustomerList",
+        name: "TeamList",
         data: () => ({
-            customers: [],
+            teams: [],
             validUserName: "Guest",
-            customerSize: 0,
+            teamSize: 0,
             showMsg: '',
             isMobile: false,
             headers: [
-                {text: 'Customer Number', sortable: false, align: 'left',},
+                {text: 'Team ID', sortable: false, align: 'left',},
                 {text: 'Name', sortable: false, align: 'left',},
-                {text: 'Address', sortable: false, align: 'left',},
+                {text: 'Abbreviation', sortable: false, align: 'left',},
                 {text: 'City', sortable: false, align: 'left',},
                 {text: 'State', sortable: false, align: 'left',},
-                {text: 'ZipCode', sortable: false, align: 'left',},
-                {text: 'Email', sortable: false, align: 'left',},
-                {text: 'Phone', sortable: false, align: 'left',},
-                {text: 'Update', sortable: false, align: 'left',},
-                {text: 'Delete', sortable: false, align: 'left',}
+                {text: 'Conference', sortable: false, align: 'left',},
+                {text: 'Division', sortable: false, align: 'left',},
+                {text: 'Wins', sortable: false, align: 'left',},
+                {text: 'Losses', sortable: false, align: 'left',},
+                {text: 'Team PPG', sortable: false, align: 'left',},
+                {text: 'Team RPG', sortable: false, align: 'left',},
+                {text: 'Team APG', sortable: false, align: 'left',},
+                {text: 'OPP PPG', sortable: false, align: 'left',}
+
             ],
 
 
         }),
         mounted() {
-            // this.getPlayers();
+            // this.getTeams();
             this.showMessages();
         },
         methods: {
@@ -137,10 +141,10 @@
                     this.showMsg = this.$route.params.msg;
                 }
              },
-             getPlayers() {
-                 apiService.getPlayerList().then(response => {
-                     this.players = response.data.data;
-                     this.playerSize = this.players.length;
+             getTeams() {
+                 apiService.getTeamList().then(response => {
+                     this.teams = response.data.data;
+                     this.teamSize = this.teams.length;
                      if (localStorage.getItem("isAuthenticates")
                          && JSON.parse(localStorage.getItem("isAuthenticates")) === true) {
                          this.validUserName = JSON.parse(localStorage.getItem("log_user"));
