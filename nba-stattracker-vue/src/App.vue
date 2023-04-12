@@ -60,7 +60,7 @@
                 window.location = "/"
             },
             login() {
-                router.push("/auth");
+                router.push("/AuthUser");
             },
         }
     };
