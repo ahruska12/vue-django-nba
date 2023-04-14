@@ -80,7 +80,7 @@
 
 
 
-<!--<script>
+<script>
 
 
     import router from '../router';
@@ -147,7 +147,7 @@
         }
     }
 </script>
--->
+
 
 <style>
     button {
