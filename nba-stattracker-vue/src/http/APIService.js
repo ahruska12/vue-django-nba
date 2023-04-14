@@ -29,7 +29,7 @@ export class APIService {
   }
 
   registerUser(credentials) {
-     const url = `${API_URL}/register/`;
+     const url = `${API_URL}/RegisterUser/`;
      credentials.customusername = credentials.username
      return axios.post(url, credentials);
   }
