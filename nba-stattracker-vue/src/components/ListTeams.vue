@@ -62,7 +62,7 @@
                     <tbody>
                     <tr v-for = "team in teams" v-bind:key="team">
                         <th scope="row">{{team.team_id}}</th>
-                        <td>{{team.team_id}}</td>
+                        <!--<td>{{team.team_id}}</td> -->
                         <td>{{team.name}}</td>
                         <td>{{team.abbreviation}}</td>
                         <td>{{team.city}}</td>

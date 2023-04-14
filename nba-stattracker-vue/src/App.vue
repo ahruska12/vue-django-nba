@@ -12,7 +12,7 @@
                   <router-link class="nav-link pr-3" to="/PlayerList">Player List</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link pr-3" to="/TeamList">Team List</router-link>
+                  <router-link class="nav-link pr-3" :to="{name:'ListTeams'}">Team List</router-link>
                 </li>
                 <li class="nav-item" v-if="!authenticated" @click="login" >
                   <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Log in</router-link>
@@ -48,6 +48,8 @@
             dialog: false,
             menu: [
                 { title: 'HomePage', url:"/"},
+                { title: 'ListPlayers', url:"/PlayerList"},
+                { title: 'ListTeams', url:"/TeamList"}
             ]
         }),
         methods: {

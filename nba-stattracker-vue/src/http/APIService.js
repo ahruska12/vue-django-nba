@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL ='fullstack2023.pythonanywhere.com'; /* 'http://localhost:8000' http://127.0.0.1:8000/ or  'http://127.0.0.1:8000'*/
+const API_URL ='https://fullstack2023.pythonanywhere.com/';
 
 export class APIService {
   constructor() {
