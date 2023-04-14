@@ -154,7 +154,7 @@
                          localStorage.removeItem('isAuthenticates');
                          localStorage.removeItem('log_user');
                          localStorage.removeItem('token');
-                         router.push("/auth");
+                         router.push("/AuthUser");
                      }
                  })
             }

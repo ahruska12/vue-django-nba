@@ -37,8 +37,8 @@
 
 <script>
     import router from './router';
-     // import {APIService} from './http/APIService';
-     // const apiService = new APIService();
+    import {APIService} from './http/APIService';
+    const apiService = new APIService();
 
 
     export default {
@@ -52,6 +52,21 @@
                 { title: 'ListTeams', url:"/TeamList"}
             ]
         }),
+        mounted() {
+            apiService.getTeamList().then(response => {
+                this.authenticated = true;
+                console.log(response)
+            }).catch(error => {
+                if (error.response.status === 401) {
+                    localStorage.removeItem('isAuthenticates');
+                    localStorage.removeItem('log_user');
+                    localStorage.removeItem('token');
+                    this.authenticated = false;
+                }
+            });
+            console.log('this.authenticated--'+this.authenticated);
+        },
+
         methods: {
             logout() {
                 localStorage.removeItem('isAuthenticates');
