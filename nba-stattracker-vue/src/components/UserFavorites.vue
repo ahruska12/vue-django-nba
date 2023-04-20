@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-md-5">
             <!-- Content goes here -->
-            This is the Player Comparison Page
+            This is the User Favorites Page
         </div>
     </div>
 </template>

@@ -18,6 +18,11 @@ const routes = [
         component: () => import('../components/ListTeams')
       },
       {
+        path: '/FavoriteList',
+        name: 'UserFavorites',
+        component: () => import('../components/UserFavorites')
+      },
+      {
           path: '/Player/:id',
           name: 'PlayerComparison',
           component: () => import('../components/PlayerComparison')

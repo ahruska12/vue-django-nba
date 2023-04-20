@@ -76,7 +76,7 @@
                         <td>{{team.team_rpg}}</td>
                         <td>{{team.team_apg}}</td>
                         <td>{{team.opp_ppg}}</td>
-                        <!--<router-link :to="{name: 'ViewTeam', params: { id: team.team_id }}> View </router-link> -->
+                        <button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>
                     </tr>
                     </tbody>
                 </table>
@@ -159,6 +159,10 @@
                          router.push("/AuthUser");
                      }
                  })
+            },
+            favoriteTeam(id) {
+                console.log(id + "favorited")
+                // does not actually function yet, need to create favorite function in Django
             }
         }
     }
