@@ -57,6 +57,7 @@
                         <th scope="col">Team RPG</th>
                         <th scope="col">Team APG</th>
                         <th scope="col">OPP PPG</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -75,6 +76,7 @@
                         <td>{{team.team_rpg}}</td>
                         <td>{{team.team_apg}}</td>
                         <td>{{team.opp_ppg}}</td>
+                        <!--<router-link :to="{name: 'ViewTeam', params: { id: team.team_id }}> View </router-link> -->
                     </tr>
                     </tbody>
                 </table>

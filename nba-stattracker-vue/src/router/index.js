@@ -19,9 +19,14 @@ const routes = [
       },
       {
           path: '/Player/:id',
-          name: 'PlayerStats',
-          component: () => import('../components/PlayerStats')
+          name: 'PlayerComparison',
+          component: () => import('../components/PlayerComparison')
       },
+      {
+        path: '/Team/:id',
+        name: 'TeamComparison',
+        component: () => import('../components/TeamComparison')
+    },
       {
           path: '/AuthUser',
           name: 'AuthUser',
