@@ -21,7 +21,7 @@
                   <router-link class="nav-link pr-3" :to="{name: 'RegisterUser'}">Register</router-link>
                 </li>
                 <li class="nav-item" v-if="authenticated" @click="favorite" >
-                  <router-link class="nav-link pr-3" :to="{name: 'UserFavorites'}">Favorites</router-link>
+                  <router-link class="nav-link pr-3" :to="{name: 'TeamFavorites'}">Favorites</router-link>
                 </li>
                 <li class="nav-item  .justify-content-end" v-if="authenticated" @click="logout" >
                   <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Logout</router-link>

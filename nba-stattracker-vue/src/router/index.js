@@ -18,9 +18,14 @@ const routes = [
         component: () => import('../components/ListTeams')
       },
       {
-        path: '/FavoriteList',
-        name: 'UserFavorites',
-        component: () => import('../components/UserFavorites')
+        path: '/TeamFavoriteList',
+        name: 'TeamFavorites',
+        component: () => import('../components/TeamFavorites')
+      },
+      {
+        path: '/PlayerFavoriteList',
+        name: 'PlayerFavorites',
+        component: () => import('../components/PlayerFavorites')
       },
       {
           path: '/Player/:id',

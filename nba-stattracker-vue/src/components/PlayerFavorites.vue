@@ -12,6 +12,7 @@
                     </footer>
                 </blockquote>
             </div>
+            <router-link to="/TeamFavoriteList">Go to Favorite Teams</router-link>
         </div>
 
 
@@ -37,7 +38,7 @@
                     </div>
                 </div>
 
-
+                <h2>Favorite Players</h2>
             </div>
             <div class="col col-12 col-md-10 d-none d-xl-block d-lg-block d-md-block">
                 <table class="table table-hover" style="overflow-y: auto"
@@ -67,7 +68,7 @@
                         <td>{{player.steals}}</td>
                         <td>{{player.blocks}}</td>
                         <td>{{player.games_played}}</td>
-                        <button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button>
+                        <button @click.prevent="removePlayer(player.player_id)" class="RemoveButton"> Remove </button>
                     </tr>
                     </tbody>
                 </table>
@@ -146,8 +147,8 @@
                      }
                  })
                 },
-            favoriteTeam(id) {
-                console.log(id + "favorited")
+            removePlayer(id) {
+                console.log(id + "removed")
                 // does not actually function yet, need to create favorite function in Django
             }
         }
