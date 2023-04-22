@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0002_auto_20230421_2255.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0003_auto_20230421_2256.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
