@@ -9,7 +9,7 @@
                   <router-link class="nav-link pr-3" to="/">Home Page</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link pr-3" to="/PlayerList">Player List</router-link>
+                  <router-link class="nav-link pr-3" :to="{name:'ListPlayers'}">Player List</router-link>
                 </li>
                 <li class="nav-item">
                   <router-link class="nav-link pr-3" :to="{name:'ListTeams'}">Team List</router-link>
