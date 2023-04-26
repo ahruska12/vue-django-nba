@@ -31,3 +31,14 @@ class Player(models.Model):
     steals = models.IntegerField(default=0)
     blocks = models.IntegerField(default=0)
     games_played = models.IntegerField(default=0)
+
+
+"""
+class Game(models.Model):
+    game_id = models.IntegerField(primary_key=True, default=0)
+    date = models.CharField(default=0, max_length=50)
+    time = models.CharField(default=0, max_length=50)
+    home_team = models.ManyToManyField(Team)
+    away_team = models.ManyToManyField(Team)
+    channel = models.CharField(default=0, max_length=50)
+"""

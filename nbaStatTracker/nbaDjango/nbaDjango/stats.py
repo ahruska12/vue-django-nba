@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
@@ -13,9 +14,10 @@ django.setup()
 # script
 
 from nba_api.stats.static import teams, players
-from nba_api.stats.endpoints import commonplayerinfo, playergamelog, teaminfocommon
-from nbaApp.models import Team, Player
+from nba_api.stats.endpoints import commonplayerinfo, playergamelog, teaminfocommon, scoreboardv2
+from nbaApp.models import Team, Player, Game
 import json
+
 
 # get list of all teams and info
 
@@ -54,6 +56,7 @@ for nba_team in nba_teams:
                 )
     team.save()
     time.sleep(.5)
+    print(f"{name} added")
 
 # get list of all players and info
 
@@ -112,6 +115,41 @@ for nba_player in nba_players:
         # they don't have a team assigned so for those players they need to be taken out
         print(f"Skipping player {player_data[0][3]}")
 
-# assigning stats to specific players
+# gathering game matchups
+
+"""
+
+
+current_date = datetime.now().strftime('%m-%d-%Y')
+matchups = scoreboardv2.ScoreboardV2(game_date=current_date)
+time.sleep(1)
+info = matchups.get_dict()
+data = info['resultSets'][0]['rowSet']
+x=0
+while x < len(data):
+    game_id = data[x][2]
+    date = data[x][0]
+    home_team = Team.objects.get(team_id=data[x][6])
+    away_team = Team.objects.get(team_id=data[x][7])
+    time = data[x][4]
+    channel = data[x][11]
+
+    game = Game(game_id=game_id,
+                date=date,
+                home_team=home_team,
+                away_team=away_team,
+                time=time,
+                channel=channel)
+    game.save()
+    time.sleep(1)
+    x = x + 1
+    print(f"matchup {x} added")
+
+"""
+
+
+
+
+
 
 
