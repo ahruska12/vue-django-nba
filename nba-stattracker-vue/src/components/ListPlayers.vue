@@ -59,6 +59,7 @@
                     <tbody>
                     <tr v-for = "player in players" v-bind:key="player">
                         <th scope="row">{{player.player_id}}</th>
+                        <!--<th scope="row">{{player.player_id}}</th> -->
                         <td>{{player.name}}</td>
                         <td>{{player.team}}</td>
                         <td>{{player.points}}</td>
@@ -113,7 +114,7 @@
 
         }),
         mounted() {
-            // this.getPlayers();
+            this.getPlayers();
             this.showMessages();
         },
         methods: {

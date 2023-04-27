@@ -15,7 +15,13 @@
                   <router-link class="nav-link pr-3" :to="{ name: 'Player', params: { id: 'compare' } }">Player Comparison</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link pr-3" to="/PlayerList">Player List</router-link>
+                  <router-link class="nav-link pr-3" :to="{ name: 'Team', params: { id: 'compare' } }">Team Comparison</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link pr-3" :to="{ name: 'Player', params: { id: 'compare' } }">Player Comparison</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link pr-3" :to="{name:'ListPlayers'}">Player List</router-link>
                 </li>
                 <li class="nav-item">
                   <router-link class="nav-link pr-3" :to="{name:'ListTeams'}">Team List</router-link>

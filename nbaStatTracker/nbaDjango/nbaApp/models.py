@@ -33,6 +33,7 @@ class Player(models.Model):
     games_played = models.IntegerField(default=0)
 
 
+<<<<<<< HEAD
 class Comparison(models.Model):
     team1 = models.ForeignKey(Team, related_name='team1_comparisons', on_delete=models.CASCADE)
     team2 = models.ForeignKey(Team, related_name='team2_comparisons', on_delete=models.CASCADE)
@@ -43,3 +44,14 @@ class Comparison(models.Model):
 
     def __str__(self):
         return f"{self.team1.name} vs {self.team2.name} - {self.category}"
+=======
+"""
+class Game(models.Model):
+    game_id = models.IntegerField(primary_key=True, default=0)
+    date = models.CharField(default=0, max_length=50)
+    time = models.CharField(default=0, max_length=50)
+    home_team = models.ManyToManyField(Team)
+    away_team = models.ManyToManyField(Team)
+    channel = models.CharField(default=0, max_length=50)
+"""
+>>>>>>> origin
