@@ -29,13 +29,14 @@ const routes = [
       },
       {
           path: '/Player/:id',
-          name: 'PlayerComparison',
+          name: 'Player',
           component: () => import('../components/PlayerComparison')
       },
       {
         path: '/Team/:id',
-        name: 'TeamComparison',
-        component: () => import('../components/TeamComparison')
+        name: 'Team',
+        component: () => import('../components/TeamComparison'),
+        props: true
     },
       {
           path: '/AuthUser',

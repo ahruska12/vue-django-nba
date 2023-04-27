@@ -9,6 +9,12 @@
                   <router-link class="nav-link pr-3" to="/">Home Page</router-link>
                 </li>
                 <li class="nav-item">
+                  <router-link class="nav-link pr-3" :to="{ name: 'Team', params: { id: 'compare' } }">Team Comparison</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link pr-3" :to="{ name: 'Player', params: { id: 'compare' } }">Player Comparison</router-link>
+                </li>
+                <li class="nav-item">
                   <router-link class="nav-link pr-3" to="/PlayerList">Player List</router-link>
                 </li>
                 <li class="nav-item">
@@ -52,14 +58,35 @@
             menu: [
                 { title: 'HomePage', url:"/"},
                 { title: 'ListPlayers', url:"/PlayerList"},
-                { title: 'ListTeams', url:"/TeamList"}
-            ]
+                { title: 'ListTeams', url:"/TeamList"},
+                { title: 'Team', url:"/Team/compare/"},
+                { title: 'Player', url:"/Player/compare/"}
+            ],
+            teams: [],
+            team: { id: 'abc' },
+            players:[],
+            player: { id: 'abc'}
         }),
         mounted() {
             apiService.getTeamList().then(response => {
                 this.authenticated = true;
                 console.log(response)
             }).catch(error => {
+              
+              if (error.response.status === 401) {
+                    localStorage.removeItem('isAuthenticates');
+                    localStorage.removeItem('log_user');
+                    localStorage.removeItem('token');
+                    this.authenticated = false;
+                }
+            });
+            console.log('this.authenticated--'+this.authenticated);
+
+            apiService.getPlayerList().then(response => {
+                this.authenticated = true;
+                console.log(response)
+            }).catch(error => {
+             
                 if (error.response.status === 401) {
                     localStorage.removeItem('isAuthenticates');
                     localStorage.removeItem('log_user');
@@ -68,9 +95,28 @@
                 }
             });
             console.log('this.authenticated--'+this.authenticated);
+        
         },
+        
+
 
         methods: {
+        //   getit(){
+        //     apiService.getTeamList().then(response => {
+        //         this.authenticated = true;
+        //         console.log('nait',response)
+        //     }).catch(error => {
+        //         if (error.response.status === 401) {
+        //             localStorage.removeItem('isAuthenticates');
+        //             localStorage.removeItem('log_user');
+        //             localStorage.removeItem('token');
+        //             this.authenticated = false;
+        //         }
+        //     });
+        //     console.log('this.authenticated--'+this.authenticated);
+        // },
+
+
             logout() {
                 localStorage.removeItem('isAuthenticates');
                 localStorage.removeItem('log_user');

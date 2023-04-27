@@ -31,3 +31,15 @@ class Player(models.Model):
     steals = models.IntegerField(default=0)
     blocks = models.IntegerField(default=0)
     games_played = models.IntegerField(default=0)
+
+
+class Comparison(models.Model):
+    team1 = models.ForeignKey(Team, related_name='team1_comparisons', on_delete=models.CASCADE)
+    team2 = models.ForeignKey(Team, related_name='team2_comparisons', on_delete=models.CASCADE)
+    category = models.CharField(max_length=255)
+    winner = models.CharField(max_length=255)
+    team1_value = models.DecimalField(max_digits=10, decimal_places=2)
+    team2_value = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.team1.name} vs {self.team2.name} - {self.category}"

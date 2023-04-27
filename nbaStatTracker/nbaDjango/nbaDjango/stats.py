@@ -16,6 +16,7 @@ from nba_api.stats.static import teams, players
 from nba_api.stats.endpoints import commonplayerinfo, playergamelog, teaminfocommon
 from nbaApp.models import Team, Player
 import json
+import pandas as pd
 
 # get list of all teams and info
 
