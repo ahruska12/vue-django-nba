@@ -3,7 +3,7 @@
     <header>
         <nav class="navbar justify-content-between flex-nowrap flex-row">
           <div class="container">
-            <h1><span>NBA StatTracker</span>App</h1>
+            <h1>NBA StatTracker App</h1>
               <ul class="nav navbar-nav flex-row float-right">
                 <li class="nav-item">
                   <router-link class="nav-link pr-3" to="/">Home Page</router-link>
@@ -142,18 +142,18 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Gill Sans Ultra Bold, Gill Sans Ultra, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000000;
   font-size: 16;
 }
 
 nav {
   padding: 30px;
-  background-color: rgb(35, 35, 35);
-  color:azure;
+  background-color: rgb(72, 58, 58);
+  color: #fffcf0;
   text-shadow: 2px 2px 2px black;
 
   a {
@@ -162,7 +162,7 @@ nav {
     font-size:16;
 
     &.router-link-exact-active {
-      color: #3e72d3;
+      color: #d3923e;
     }
   }
 }

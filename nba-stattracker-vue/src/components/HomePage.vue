@@ -4,7 +4,7 @@
             <br>
             <h2> NBA StatTracker</h2>
                 <br>
-            <h3> Welcome to the All-in-One NBA Statistics Tracker! Navigate to Different Players, Teams, and More on the Navbar. </h3>
+            <h3> Welcome to the All-in-One NBA Statistics Tracker! Navigate to Different Players, Teams, and More on the Navbar! </h3>
                 <br>
             <h2> About the App</h2>
                 <br>
