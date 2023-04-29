@@ -46,36 +46,18 @@ export class APIService {
     return axios.get(`${API_URL}/api/players/${playerId}`);
   }
   getTeamComparison(team1Id, team2Id) {
-  const url = `${API_URL}/api/teams/compare/${team1Id}/${team2Id}/`;
+  const url = `${API_URL}/api/teams/compare/${team1Id}/${team2Id}`;
   let jwtToken = localStorage.getItem('token');
   console.log(":::jwtToken:::::"+jwtToken);
   const headers = {Authorization: `jwt ${jwtToken}`};
   return axios.get(url, {headers: headers});
   }
   getPlayerComparison(player1Id, player2Id) {
-  const url = `${API_URL}/api/teams/compare/${player1Id}/${player2Id}/`;
+  const url = `${API_URL}/api/teams/compare/${player1Id}/${player2Id}`;
   let jwtToken = localStorage.getItem('token');
   console.log(":::jwtToken:::::"+jwtToken);
   const headers = {Authorization: `jwt ${jwtToken}`};
   return axios.get(url, {headers: headers});
-  }
-
-
-  getPlayer(param_pk) {
-    const url = `${API_URL}/api/players/${param_pk}`;
-    let jwtToken = localStorage.getItem('token');
-    console.log(":::jwtToken:::::"+jwtToken);
-    const headers = {Authorization: `jwt ${jwtToken}`};
-    return axios.get(url, {headers: headers});
-  }
-
-  getPlayerList() {
-    const url = `${API_URL}/api/players/`;
-    let jwtToken = localStorage.getItem('token');
-    console.log(":::jwtToken:::::"+jwtToken);
-    const headers = {Authorization: `jwt ${jwtToken}`};
-    return axios.get(url, {headers: headers});
-
   }
 
   authenticateLogin(credentials) {
