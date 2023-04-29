@@ -15,7 +15,7 @@ django.setup()
 
 from nba_api.stats.static import teams, players
 from nba_api.stats.endpoints import commonplayerinfo, playergamelog, teaminfocommon, scoreboardv2
-from nbaApp.models import Team, Player, Game
+from nbaApp.models import Team, Player
 import json
 import pandas as pd
 

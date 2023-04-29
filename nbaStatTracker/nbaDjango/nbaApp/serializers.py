@@ -86,15 +86,26 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+<<<<<<< Updated upstream
 class ComparisonSerializer(serializers.ModelSerializer):
      class Meta:
         model = Team
         fields = ('name', 'wins', 'losses', 'team_ppg', 'team_rpg', 'team_apg', 'opp_ppg')
 
 class PlayerComparisonSerializer(serializers.ModelSerializer):
+=======
+
+class ComparisonSerializer(serializers.Serializer):
+    class Meta:
+        model = Team
+        fields = ('name', 'wins', 'losses', 'team_ppg', 'team_rpg', 'team_apg', 'opp_ppg')
+
+
+class PlayerComparisonSerializer(serializers.Serializer):
+>>>>>>> Stashed changes
     class Meta:
         model = Player
-        fields =('player_id',
+        fields = ('player_id',
                   'name',
                   'team',
                   'points',
