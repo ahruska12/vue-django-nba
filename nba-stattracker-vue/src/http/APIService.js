@@ -53,7 +53,7 @@ export class APIService {
   return axios.get(url, {headers: headers});
   }
   getPlayerComparison(player1Id, player2Id) {
-  const url = `${API_URL}/api/teams/compare/${player1Id}/${player2Id}`;
+  const url = `${API_URL}/api/players/compare/${player1Id}/${player2Id}`;
   let jwtToken = localStorage.getItem('token');
   console.log(":::jwtToken:::::"+jwtToken);
   const headers = {Authorization: `jwt ${jwtToken}`};

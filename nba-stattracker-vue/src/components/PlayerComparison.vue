@@ -66,7 +66,7 @@
         immediate: true,
         handler() {
           if (this.player1 && this.player2) {
-            this.compareplayers();
+            this.comparePlayers();
           }
         },
       },
@@ -79,10 +79,10 @@
         },
       },
     },
-    mounted(){
-        this.getPlayers();   
   
-    },
+    created() {
+    this.getPlayers();
+  },
     
     methods: {
         getPlayers() {
@@ -94,6 +94,7 @@
                          this.validUserName = JSON.parse(localStorage.getItem("log_user"));
                      }
                  }).catch(error => {
+        
                      if (error.response.status === 401) {
                          localStorage.removeItem('isAuthenticates');
                          localStorage.removeItem('log_user');
@@ -117,7 +118,7 @@
             })
             
             .catch(error => {
-            console.log(error)
+
                      if (error.response.status === 401) {
                          localStorage.removeItem('isAuthenticates');
                          localStorage.removeItem('log_user');
@@ -128,7 +129,7 @@
       },
       getPlayerId(playerName) {
       const player = this.players.find(t => t.name === playerName);
-      console.log('na d player',player)
+     
       return player ? player.player_id : null;
     },
     
