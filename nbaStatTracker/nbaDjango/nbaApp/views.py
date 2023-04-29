@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from .serializers import *
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
 from nbaApp.models import Team
 from nbaApp.serializers import ComparisonSerializer
 
@@ -12,7 +12,7 @@ from nbaApp.serializers import ComparisonSerializer
 @csrf_exempt
 @api_view(['GET', 'POST'])
 def team_list(request):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     if request.method == 'GET':
         teams = Team.objects.all()
         serializer = TeamSerializer(teams, context={'request': request}, many=True)
@@ -50,7 +50,7 @@ def getTeam(request, pk):
 @csrf_exempt
 @api_view(['GET', 'POST'])
 def player_list(request):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     if request.method == 'GET':
         player = Player.objects.all()
         serializer = PlayerSerializer(player, context={'request': request}, many=True)
@@ -86,7 +86,7 @@ def getPlayer(request, pk):
 
 @api_view(['GET'])
 def compare_teams(request,team1_id,team2_id):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     try:
         team1 = Team.objects.get(team_id=team1_id)
@@ -170,15 +170,19 @@ def compare_teams(request,team1_id,team2_id):
 
 @api_view(['GET'])
 def compare_players(request, player1_id,  player2_id):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     if not player1_id or not player2_id:
         return Response({'error': 'Please provide both player1_id and player2_id'})
     try:
         player1 = Player.objects.get(player_id=player1_id)
         player2 = Player.objects.get(player_id=player2_id)
+        print(player1)
     except Player.DoesNotExist:
         return Response({'error': 'One or both player IDs are invalid'})
+    
+    player1_serializer = PlayerSerializer(player1)
+    player2_serializer = PlayerSerializer(player2)
     
     comparisons = [
             {
@@ -220,7 +224,7 @@ def compare_players(request, player1_id,  player2_id):
             difference = int(comparison['player1_value']) - int(comparison['player2_value'])
         except ValueError:  
             difference = round(float(comparison['player1_value']) - float(comparison['player2_value']), 3)
-        print(comparison['player1_value'],'and', comparison['player2_value'],'==',difference)
+
         if difference > 0:
 
             comparison_results[comparison['category']] = {

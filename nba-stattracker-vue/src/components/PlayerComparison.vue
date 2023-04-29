@@ -44,7 +44,7 @@
   </template>
   
   <script>
-  import axios from 'axios';
+
   import router from '../router';
   import {APIService} from '../http/APIService';
   const apiService = new APIService();
@@ -80,7 +80,8 @@
       },
     },
     mounted(){
-        this.getPlayers();        
+        this.getPlayers();   
+  
     },
     
     methods: {
@@ -106,7 +107,7 @@
             const player1Id = this.getPlayerId(this.player1);
             const player2Id = this.getPlayerId(this.player2);
 
-            axios.get(`/api/teams/compare/${player1Id}/${player2Id}`)
+            apiService.getPlayerComparison(player1Id,player2Id)
             .then(response => {
                 this.comparisons1 = response.data.data;               
                 if (localStorage.getItem("isAuthenticates")
