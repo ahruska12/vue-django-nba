@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dca48760-6750-4d15-90c8-e1836aefa311" name="Changes" comment="got stats working, need to figure out how to link to vue">
-      <change afterPath="$PROJECT_DIR$/nbaDjango/may.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nbaDjango/may2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0002_auto_20230421_2255.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0003_auto_20230421_2256.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0004_comparison.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/migrations/0005_comparison_winner.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaApp/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaDjango.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/nbaDjango/nbaDjango/stats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbaDjango/nbaDjango2.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
