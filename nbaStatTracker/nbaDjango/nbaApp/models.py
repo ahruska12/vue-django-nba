@@ -1,5 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
+
 
 
 class Team(models.Model):
@@ -32,6 +34,9 @@ class Player(models.Model):
     blocks = models.IntegerField(default=0)
     games_played = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.name
+
 
 class Comparison(models.Model):
     team1 = models.ForeignKey(Team, related_name='team1_comparisons', on_delete=models.CASCADE)
@@ -43,3 +48,15 @@ class Comparison(models.Model):
 
     def __str__(self):
         return f"{self.team1.name} vs {self.team2.name} - {self.category}"
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    team = models.ManyToManyField(Team, related_name='favorites')
+    player = models.ManyToManyField(Player, related_name='favorites')
+
+    def __str__(self):
+        return str(self.user)
+
+
+

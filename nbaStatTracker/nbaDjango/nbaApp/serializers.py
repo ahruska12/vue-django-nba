@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework_jwt.serializers import User
 
-from .models import Team, Player, Comparison
+from .models import Team, Player, Comparison, Favorite
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
@@ -86,6 +86,19 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+class FavoriteSerializer(serializers.ModelSerializer):
+    team = serializers.SerializerMethodField()
+    player = serializers.SerializerMethodField()
+
+    def get_team(self, obj):
+        return [team.name for team in obj.team.all()]
+
+    def get_player(self, obj):
+        return [player.name for player in obj.player.all()]
+
+    class Meta:
+        model = Favorite
+        fields = ('team', 'player')
 
 
 
