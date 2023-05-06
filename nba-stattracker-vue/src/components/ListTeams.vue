@@ -14,6 +14,61 @@
             </div>
         </div>
 
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Teams" v-model="searchTerm">
+                <button class="btn btn-outline-secondary" type="button" @click="search">Search</button>
+              </div>
+            </div>
+        </div>
+        
+        <div  class="col col-12 col-md-10 d-none d-xl-block d-lg-block d-md-block" v-if="filteredTeams.length > 0">
+            <div class="row align-items-center justify-content-center"><h3>Search Results</h3></div>
+            <table class="table table-hover" style="overflow-y: auto"
+                       :headers="headers">
+                    <thead>
+                    <tr>
+                        <th scope="col">Team ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Abbreviation</th>
+                        <th scope="col">City</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Conference</th>
+                        <th scope="col">Division</th>
+                        <th scope="col">Wins</th>
+                        <th scope="col">Losses</th>
+                        <th scope="col">Team PPG</th>
+                        <th scope="col">Team RPG</th>
+                        <th scope="col">Team APG</th>
+                        <th scope="col">OPP PPG</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+           
+              <tbody>
+                <tr v-for = "team in filteredTeams" v-bind:key="team">
+                
+                    <th scope="row">{{team.team_id}}</th>
+                    <td>{{team.name}}</td>
+                    <td>{{team.abbreviation}}</td>
+                    <td>{{team.city}}</td>
+                    <td>{{team.state}}</td>
+                    <td>{{team.conference}}</td>
+                    <td>{{team.division}}</td>
+                    <td>{{team.wins}}</td>
+                    <td>{{team.losses}}</td>
+                    <td>{{team.team_ppg}}</td>
+                    <td>{{team.team_rpg}}</td>
+                    <td>{{team.team_apg}}</td>
+                    <td>{{team.opp_ppg}}</td>
+                    <button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>
+                </tr>
+                </tbody>
+          
+            </table>
+          </div>
+          <br><br>
 
         <!-- Data table -->
         <div class="row align-items-center justify-content-center">
@@ -83,16 +138,10 @@
             </div>
         </div>
 
-
-
-
 </template>
 
 
-
-
 <script>
-
 
     import router from '../router';
     import {APIService} from '../http/APIService';
@@ -103,6 +152,7 @@
         name: "TeamList",
         data: () => ({
             teams: [],
+            searchTerm: '',
             validUserName: "Guest",
             teamSize: 0,
             showMsg: '',
@@ -123,7 +173,7 @@
                 {text: 'OPP PPG', sortable: false, align: 'left',}
 
             ],
-
+            filteredTeams: [],
 
         }),
         mounted() {
@@ -163,11 +213,19 @@
             favoriteTeam(id) {
                 console.log(id + "favorited")
                 // does not actually function yet, need to create favorite function in Django
-            }
+            },
+            search() {
+                if (!this.searchTerm) {
+                    this.filteredTeams = this.teams;
+                } else {
+                    this.filteredTeams = this.teams.filter(team => {
+                    return team.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+                    });
+                }
+                }
         }
     }
 </script>
-
 
 <style>
     button {

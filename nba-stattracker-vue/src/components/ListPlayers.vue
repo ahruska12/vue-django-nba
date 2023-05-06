@@ -14,7 +14,58 @@
             </div>
         </div>
 
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-6 mb-3">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search players" v-model="searchTerm">
+                <button class="btn btn-outline-secondary" type="button" @click="search">Search</button>
+              </div>
+            </div>
+        </div>
 
+
+        <div  class="col col-12 col-md-10 d-none d-xl-block d-lg-block d-md-block" v-if="filteredPlayers.length > 0">
+            <div class="row align-items-center justify-content-center"><h3>Search Results</h3></div>
+            <table class="table table-hover" style="overflow-y: auto"
+                       :headers="headers">
+                    <thead>
+                    <tr>
+                        <th scope="col">Player ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Rebounds</th>
+                        <th scope="col">Assists</th>
+                        <th scope="col">Steals</th>
+                        <th scope="col">Blocks</th>
+                        <th scope="col">Games Played</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+          
+              <tbody>
+                <tr v-for = "player in filteredPlayers" v-bind:key="player">
+                    <th scope="row">{{player.player_id}}</th>
+                    <td>{{player.name}}</td>
+                    <td>{{player.team}}</td>
+                    <td>{{player.points}}</td>
+                    <td>{{player.rebounds}}</td>
+                    <td>{{player.assists}}</td>
+                    <td>{{player.steals}}</td>
+                    <td>{{player.blocks}}</td>
+                    <td>{{player.games_played}}</td>
+                    <button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button>
+                </tr>
+                </tbody>
+           
+            </table>
+        </div>
+        <br><br>
+      
+        <!-- <div v-else>
+            <p>No players found.</p>
+        </div> -->
+        
         <!-- Data table -->
         <div class="row align-items-center justify-content-center">
             <div class="d-md-none" id="collapsable-card" style="width: 80%">
@@ -74,26 +125,18 @@
                 </table>
             </div>
         </div>
-
-
-
-
 </template>
 
-
-
-
 <script>
-
-
     import router from '../router';
     import {APIService} from '../http/APIService';
     const apiService = new APIService();
 
-
     export default {
         name: "PlayerList",
         data: () => ({
+            searchTerm: '',
+            filteredPlayers: [],
             players: [],
             validUserName: "Guest",
             playerSize: 0,
@@ -150,11 +193,19 @@
             favoriteTeam(id) {
                 console.log(id + "favorited")
                 // does not actually function yet, need to create favorite function in Django
-            }
+            },
+            search() {
+                if (!this.searchTerm) {
+                    this.filteredPlayers = this.players;
+                } else {
+                    this.filteredPlayers = this.players.filter(player => {
+                    return player.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+                    });
+                }
+                }
         }
     }
 </script>
-
 
 <style>
     button {

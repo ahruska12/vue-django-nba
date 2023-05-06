@@ -62,6 +62,16 @@ def player_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+def search_players(request):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+    search_query = request.GET.get('query')
+    if search_query:
+        players = Player.objects.filter(name__icontains=search_query)
+    else:
+        players = Player.objects.all()
+    serializer = PlayerSerializer(players, context={'request': request}, many=True)
+    return Response({'data': serializer.data})
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def getPlayer(request, pk):

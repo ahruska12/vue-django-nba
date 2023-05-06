@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^api/teams/compare/(?P<team1_id>\d+)/(?P<team2_id>\d+)/$', views.compare_teams),
     url(r'^api/players/compare/(?P<player1_id>\d+)/(?P<player2_id>\d+)/$', views.compare_players),
     url(r'^api/players/compare/$', views.compare_players),
+    path('search-players/', views.search_players, name='search-players'),
     ]
 
 # username - admin
