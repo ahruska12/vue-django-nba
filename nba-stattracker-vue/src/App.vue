@@ -114,6 +114,7 @@
         //         }
         //     });
         //     console.log('this.authenticated--'+this.authenticated);
+        //     This code is being used for the technical manual tutorial
         // },
 
 
