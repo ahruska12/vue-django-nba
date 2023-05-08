@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Team, Player, Favorite
+from .models import Team, Player, FavoriteTeam, FavoritePlayer
 
 
 class TeamList(admin.ModelAdmin):
@@ -37,15 +37,20 @@ class PlayerList(admin.ModelAdmin):
                      )
     ordering = ['name']
 
-class FavoriteList(admin.ModelAdmin):
-    list_filter = ('team',
-                   'player')
-    search_fields = ('team',
-                     'player')
-    ordering = ['player']
 
+class FavoriteTeamList(admin.ModelAdmin):
+    list_filter = ['team']
+    search_fields = ['team']
+    ordering = ['team']
+
+
+class FavoritePlayerList(admin.ModelAdmin):
+    list_filter = ['player']
+    search_fields = ['player']
+    ordering = ['player']
 
 
 admin.site.register(Team, TeamList)
 admin.site.register(Player, PlayerList)
-admin.site.register(Favorite, FavoriteList)
+admin.site.register(FavoriteTeam, FavoriteTeamList)
+admin.site.register(FavoritePlayer, FavoritePlayerList)

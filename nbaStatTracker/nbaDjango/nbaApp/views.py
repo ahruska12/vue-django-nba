@@ -4,9 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny
-from nbaApp.models import Team
+from nbaApp.models import Team, FavoritePlayer, FavoriteTeam
 from nbaApp.serializers import ComparisonSerializer
-
 
 
 @csrf_exempt
@@ -62,6 +61,7 @@ def player_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
 @api_view(['GET'])
 def search_players(request):
     permission_classes = (IsAuthenticatedOrReadOnly,)
@@ -72,6 +72,7 @@ def search_players(request):
         players = Player.objects.all()
     serializer = PlayerSerializer(players, context={'request': request}, many=True)
     return Response({'data': serializer.data})
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def getPlayer(request, pk):
@@ -93,36 +94,55 @@ def getPlayer(request, pk):
         player.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
 @csrf_exempt
 @api_view(['GET', 'POST'])
-def favorite_list(request):
+def favorite_team_list(request):
     permission_classes = (IsAuthenticatedOrReadOnly,)
     if request.method == 'GET':
         user = request.user
-        favorites = Favorite.objects.filter(user=user.id)
-        serializer = FavoriteSerializer(favorites, context={'request': request}, many=True)
+        favorites = FavoriteTeam.objects.filter(user=user.id)
+        serializer = FavoriteTeamSerializer(favorites, context={'request': request}, many=True)
         return Response({'data': serializer.data})
     elif request.method == 'POST':
-        serializer = FavoriteSerializer(data=request.data)
+        serializer = FavoriteTeamSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+@csrf_exempt
+@api_view(['GET', 'POST'])
+def favorite_player_list(request):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+    if request.method == 'GET':
+        user = request.user
+        favorites = FavoritePlayer.objects.filter(user=user.id)
+        serializer = FavoritePlayerSerializer(favorites, context={'request': request}, many=True)
+        return Response({'data': serializer.data})
+    elif request.method == 'POST':
+        serializer = FavoritePlayerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 @api_view(['GET', 'PUT', 'DELETE'])
-def getFavorite(request, pk):
+def getFavoriteTeam(request, pk):
     """ Retrieve, update or delete a favorite instance. """
     try:
         user = request.user
-        favorite = Favorite.objects.get(pk=pk)
-    except Favorite.DoesNotExist:
+        favorite = FavoriteTeam.objects.get(pk=pk)
+    except FavoriteTeam.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = FavoriteSerializer(favorite, context={'request': request})
+        serializer = FavoriteTeamSerializer(favorite, context={'request': request})
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = FavoriteSerializer(favorite, data=request.data, context={'request': request})
+        serializer = FavoriteTeamSerializer(favorite, data=request.data, context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -132,9 +152,31 @@ def getFavorite(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@api_view(['GET', 'PUT', 'DELETE'])
+def getFavoritePlayer(request, pk):
+    """ Retrieve, update or delete a favorite instance. """
+    try:
+        user = request.user
+        favorite = FavoritePlayer.objects.get(pk=pk)
+    except FavoritePlayer.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = FavoritePlayerSerializer(favorite, context={'request': request})
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = FavoritePlayerSerializer(favorite, data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        favorite.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 @api_view(['GET'])
-def compare_teams(request,team1_id,team2_id):
+def compare_teams(request, team1_id, team2_id):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     try:
@@ -143,82 +185,82 @@ def compare_teams(request,team1_id,team2_id):
 
     except Team.DoesNotExist:
         return Response({'error': 'One or both teams not found'}, status=404)
-    
+
     comparisons = [
-            {
-                'category': 'Wins',
-                'team1_value': team1.wins,
-                'team2_value': team2.wins,
-            },
-            {
-                'category': 'Losses',
-                'team1_value': team1.losses,
-                'team2_value': team2.losses,
-            },
-            {
-                'category': 'PPG',
-                'team1_value': team1.team_ppg,
-                'team2_value': team2.team_ppg,
-            },
-            {
-                'category': 'RPG',
-                'team1_value': team1.team_rpg,
-                'team2_value': team2.team_rpg,
-            },
-            {
-                'category': 'APG',
-                'team1_value': team1.team_apg,
-                'team2_value': team2.team_apg,
-            },
-            {
-                'category': 'OPP PPG',
-                'team1_value': team1.opp_ppg,
-                'team2_value': team2.opp_ppg,
-            }
-        ]
+        {
+            'category': 'Wins',
+            'team1_value': team1.wins,
+            'team2_value': team2.wins,
+        },
+        {
+            'category': 'Losses',
+            'team1_value': team1.losses,
+            'team2_value': team2.losses,
+        },
+        {
+            'category': 'PPG',
+            'team1_value': team1.team_ppg,
+            'team2_value': team2.team_ppg,
+        },
+        {
+            'category': 'RPG',
+            'team1_value': team1.team_rpg,
+            'team2_value': team2.team_rpg,
+        },
+        {
+            'category': 'APG',
+            'team1_value': team1.team_apg,
+            'team2_value': team2.team_apg,
+        },
+        {
+            'category': 'OPP PPG',
+            'team1_value': team1.opp_ppg,
+            'team2_value': team2.opp_ppg,
+        }
+    ]
 
     comparison_results = {}
     for comparison in comparisons:
-            try:
-    
-                difference = int(comparison['team1_value']) - int(comparison['team2_value'])
-            except ValueError:  
-                difference = round(float(comparison['team1_value']) - float(comparison['team2_value']), 3)
+        try:
 
-            if difference > 0:
-                comparison_results[comparison['category']] = {
-                    'team1_name': team1.name,
-                    'team1_value': comparison['team1_value'],
-                    'team2_name': team2.name,
-                    'team2_value': comparison['team2_value'],
-                    'result': f"{team1.name} has more {abs(difference)} {comparison['category']}"
-                }
-            elif difference < 0:
-                comparison_results[comparison['category']] = {
-                    'team1_name': team1.name,
-                    'team1_value': comparison['team1_value'],
-                    'team2_name': team2.name,
-                    'team2_value': comparison['team2_value'],
-                    'result': f"{team1.name} has less {abs(difference)} {comparison['category']}"
-                }
-            else:
-                comparison_results[comparison['category']] = {
-                    'team1_name': team1.name,
-                    'team1_value': comparison['team1_value'],
-                    'team2_name': team2.name,
-                    'team2_value': comparison['team2_value'],
-                    'result': f"{team1.name} and {team2.name} both have the same {comparison['category']}"
-                }
+            difference = int(comparison['team1_value']) - int(comparison['team2_value'])
+        except ValueError:
+            difference = round(float(comparison['team1_value']) - float(comparison['team2_value']), 3)
 
-    return Response({"data":{
-            'team1_name': team1.name,
-            'team2_name': team2.name,
-            'comparisons': comparison_results
-        }})
+        if difference > 0:
+            comparison_results[comparison['category']] = {
+                'team1_name': team1.name,
+                'team1_value': comparison['team1_value'],
+                'team2_name': team2.name,
+                'team2_value': comparison['team2_value'],
+                'result': f"{team1.name} has more {abs(difference)} {comparison['category']}"
+            }
+        elif difference < 0:
+            comparison_results[comparison['category']] = {
+                'team1_name': team1.name,
+                'team1_value': comparison['team1_value'],
+                'team2_name': team2.name,
+                'team2_value': comparison['team2_value'],
+                'result': f"{team1.name} has less {abs(difference)} {comparison['category']}"
+            }
+        else:
+            comparison_results[comparison['category']] = {
+                'team1_name': team1.name,
+                'team1_value': comparison['team1_value'],
+                'team2_name': team2.name,
+                'team2_value': comparison['team2_value'],
+                'result': f"{team1.name} and {team2.name} both have the same {comparison['category']}"
+            }
+
+    return Response({"data": {
+        'team1_name': team1.name,
+        'team2_name': team2.name,
+        'comparisons': comparison_results
+    }})
 
 
 @api_view(['GET'])
-def compare_players(request, player1_id,  player2_id):
+def compare_players(request, player1_id, player2_id):
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     if not player1_id or not player2_id:
@@ -229,84 +271,85 @@ def compare_players(request, player1_id,  player2_id):
         print(player1)
     except Player.DoesNotExist:
         return Response({'error': 'One or both player IDs are invalid'})
-    
+
     player1_serializer = PlayerSerializer(player1)
     player2_serializer = PlayerSerializer(player2)
-    
+
     comparisons = [
-            {
-                'category': 'Points',
-                'player1_value': player1.points,
-                'player2_value': player2.points,
-            },
-            {
-                'category': 'Rebounds',
-                'player1_value': player1.rebounds,
-                'player2_value': player2.rebounds,
-            },
-            {
-                'category': 'Assists',
-                'player1_value': player1.assists,
-                'player2_value': player2.assists,
-            },
-            {
-                'category': 'Steals',
-                'player1_value': player1.steals,
-                'player2_value': player2.steals,
-            },
-            {
-                'category': 'Blocks',
-                'player1_value': player1.blocks,
-                'player2_value': player2.blocks,
-            },
-            {
-                'category': 'Games Played',
-                'player1_value': player1.games_played,
-                'player2_value': player2.games_played,
-            }
-        ]
+        {
+            'category': 'Points',
+            'player1_value': player1.points,
+            'player2_value': player2.points,
+        },
+        {
+            'category': 'Rebounds',
+            'player1_value': player1.rebounds,
+            'player2_value': player2.rebounds,
+        },
+        {
+            'category': 'Assists',
+            'player1_value': player1.assists,
+            'player2_value': player2.assists,
+        },
+        {
+            'category': 'Steals',
+            'player1_value': player1.steals,
+            'player2_value': player2.steals,
+        },
+        {
+            'category': 'Blocks',
+            'player1_value': player1.blocks,
+            'player2_value': player2.blocks,
+        },
+        {
+            'category': 'Games Played',
+            'player1_value': player1.games_played,
+            'player2_value': player2.games_played,
+        }
+    ]
 
     comparison_results = {}
     for comparison in comparisons:
         try:
-    
+
             difference = int(comparison['player1_value']) - int(comparison['player2_value'])
-        except ValueError:  
+        except ValueError:
             difference = round(float(comparison['player1_value']) - float(comparison['player2_value']), 3)
 
         if difference > 0:
 
             comparison_results[comparison['category']] = {
-                    'player1_name': player1.name,
-                    'player1_value': comparison['player1_value'],
-                    'player2_name': player2.name,
-                    'player2_value': comparison['player2_value'],
-                    'result': f"{player1.name} has more {abs(difference)} {comparison['category']}"
-                   
-                }
+                'player1_name': player1.name,
+                'player1_value': comparison['player1_value'],
+                'player2_name': player2.name,
+                'player2_value': comparison['player2_value'],
+                'result': f"{player1.name} has more {abs(difference)} {comparison['category']}"
+
+            }
         elif difference < 0:
             comparison_results[comparison['category']] = {
-                    'player1_name': player1.name,
-                    'player1_value': comparison['player1_value'],
-                    'player2_name': player2.name,
-                    'player2_value': comparison['player2_value'],
-                    'result': f"{player1.name} has less {abs(difference)} {comparison['category']}"
-                }
+                'player1_name': player1.name,
+                'player1_value': comparison['player1_value'],
+                'player2_name': player2.name,
+                'player2_value': comparison['player2_value'],
+                'result': f"{player1.name} has less {abs(difference)} {comparison['category']}"
+            }
         else:
             comparison_results[comparison['category']] = {
-                    'player1_name': player1.name,
-                    'player1_value': comparison['player1_value'],
-                    'player2_name': player2.name,
-                    'player2_value': comparison['player2_value'],
-                    'result': f"{player1.name} and {player2.name} both have the same {comparison['category']}"
-                }
+                'player1_name': player1.name,
+                'player1_value': comparison['player1_value'],
+                'player2_name': player2.name,
+                'player2_value': comparison['player2_value'],
+                'result': f"{player1.name} and {player2.name} both have the same {comparison['category']}"
+            }
 
-    return Response({'data':{
-            'player1_name': player1.name,
-            'player2_name': player2.name,
-            'comparisons': comparison_results
-        }})
-            
+    return Response({'data': {
+        'player1_name': player1.name,
+        'player2_name': player2.name,
+        'comparisons': comparison_results
+    }})
+
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)

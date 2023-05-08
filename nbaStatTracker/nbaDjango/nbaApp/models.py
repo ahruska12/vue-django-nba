@@ -50,9 +50,15 @@ class Comparison(models.Model):
         return f"{self.team1.name} vs {self.team2.name} - {self.category}"
 
 
-class Favorite(models.Model):
+class FavoriteTeam(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     team = models.ManyToManyField(Team, related_name='favorites')
+
+    def __str__(self):
+        return str(self.user)
+
+class FavoritePlayer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     player = models.ManyToManyField(Player, related_name='favorites')
 
     def __str__(self):
