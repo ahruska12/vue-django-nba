@@ -15,21 +15,21 @@ export default {
   <div class="sidebar" :style="{ width: sidebarWidth }">
     <h1>
       <span v-if="collapsed">
-        <div>NBA</div>
-        <div>App</div>
+        <div></div>
+        <div></div>
       </span>
-      <span v-else>NBA Stat </span>
+      <span v-else>NBA Stat Tracker</span>
     </h1>
 
                   <SidebarLink icon="fas fa-home" to="/">Home Page</SidebarLink>
-                  <router-link class="btn-secondary" :to="{ name: 'Team', params: { id: 'compare' } }">Team Comparison</router-link>
-                  <router-link class="btn-secondary" :to="{ name: 'Player', params: { id: 'compare' } }">Player Comparison</router-link>
-                  <router-link class="btn-secondary" :to="{name:'ListPlayers'}">Player List</router-link>
-                  <router-link class="btn-secondary" :to="{name:'ListTeams'}">Team List</router-link>
-                  <router-link class="btn-secondary" v-if="!authenticated" @click="login"  :to="{name: 'AuthUser'}">Log in</router-link>
-                  <router-link class="btn-secondary" v-if="!authenticated" @click="register" :to="{name: 'RegisterUser'}">Register</router-link>
-                  <router-link class="btn-secondary" v-if="authenticated" @click="favorite" :to="{name: 'TeamFavorites'}">Favorites</router-link>
-                  <router-link class="btn-secondary" v-if="authenticated" @click="logout" :to="{name: 'AuthUser'}">Logout</router-link>
+                  <SidebarLink icon="fas fa-people-group" :to="{ name: 'Team', params: { id: 'compare' } }">Team Compare</SidebarLink>
+                  <SidebarLink icon="fas fa-people-arrows" :to="{ name: 'Player', params: { id: 'compare' } }">Player Compare</SidebarLink>
+                  <SidebarLink icon="fas fa-person" :to="{name:'ListPlayers'}">Player List</SidebarLink>
+                  <SidebarLink icon="fas fa-sitemap" :to="{name:'ListTeams'}">Team List</SidebarLink>
+                  <SidebarLink icon="fas fa-basketball" v-if="!authenticated" @click="login"  :to="{name: 'AuthUser'}">Log in</SidebarLink>
+                  <SidebarLink icon="fas fa-list" v-if="!authenticated" @click="register" :to="{name: 'RegisterUser'}">Register</SidebarLink>
+                  <SidebarLink icon="fas fa-list" v-if="authenticated" @click="favorite" :to="{name: 'TeamFavorites'}">Favorites</SidebarLink>
+                  <SidebarLink icon="fas fa-list" v-if="authenticated" @click="logout" :to="{name: 'AuthUser'}">Logout</SidebarLink>
 
 
     <span
@@ -44,8 +44,8 @@ export default {
 
 <style>
 :root {
-    --sidebar-bg-color: #2f855a;
-    --sidebar-item-hover: #38a169;
+    --sidebar-bg-color: #182c45;
+    --sidebar-item-hover: #ff7300;
     --sidebar-item-active: #276749;
     --button-color: black;
     --button-background-color: rgb(255, 202, 0);
@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  color: white;
+  color: #ff6a00;
   background-color: var(--sidebar-bg-color);
 
   float: left;
@@ -80,7 +80,7 @@ export default {
   bottom: 0;
   padding: 0.75em;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 106, 0);
 
   transition: 0.2s linear;
 }
@@ -88,27 +88,6 @@ export default {
 .rotate-180 {
   transform: rotate(180deg);
   transition: 0.2s linear;
-}
-
-.btn-primary {
-  color: var(--button-color);
-  background-color: var(--button-background-color);
-  border-radius: var(--border-radius);
-}
-
-.btn-primary:hover {
-  box-shadow: inset 0 0 0 20rem var(--darken-1);
-}
-
-.btn-primary:active {
-  box-shadow: inset 0 0 0 20rem var(--darken-2),
-    inset 0 3px 4px 0 var(--darken-3),
-    0 0 1px var(--darken-2);
-}
-
-.btn-primary:disabled,
-.btn-primary.is-disabled {
-  opacity: .5;
 }
 
 </style>
