@@ -1,164 +1,39 @@
+<script>
+import Sidebar from '@/components/sidebar/SideBar.vue'
+import { sidebarWidth } from '@/components/sidebar/state'
+export default {
+  components: { Sidebar },
+  setup() {
+    return { sidebarWidth }
+  }
+}
+</script>
 <template>
-  <div class="app">
-    <header>
-        <nav class="navbar justify-content-between flex-nowrap flex-row">
-          <div class="container">
-            <h1>NBA StatTracker App</h1>
-              <ul class="nav navbar-nav flex-row float-right">
-                <li class="nav-item">
-                  <router-link class="nav-link pr-3" to="/">Home Page</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link class="nav-link pr-3" :to="{ name: 'Team', params: { id: 'compare' } }">Team Comparison</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link class="nav-link pr-3" :to="{ name: 'Player', params: { id: 'compare' } }">Player Comparison</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link class="nav-link pr-3" :to="{name:'ListPlayers'}">Player List</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link class="nav-link pr-3" :to="{name:'ListTeams'}">Team List</router-link>
-                </li>
-                <li class="nav-item" v-if="!authenticated" @click="login" >
-                  <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Log in</router-link>
-                </li>
-                <li class="nav-item" v-if="!authenticated" @click="register" >
-                  <router-link class="nav-link pr-3" :to="{name: 'RegisterUser'}">Register</router-link>
-                </li>
-                <li class="nav-item" v-if="authenticated" @click="favorite" >
-                  <router-link class="nav-link pr-3" :to="{name: 'TeamFavorites'}">Favorites</router-link>
-                </li>
-                <li class="nav-item  .justify-content-end" v-if="authenticated" @click="logout" >
-                  <router-link class="nav-link pr-3" :to="{name: 'AuthUser'}">Logout</router-link>
-                </li>
-              
-              </ul>
-          </div>
-        </nav>
-    </header>
-  <main>
-    <router-view class="modify"></router-view>
-  </main>
+  <Sidebar />
+  <div :style="{ 'margin-left': sidebarWidth }">
+    <router-view />
   </div>
 </template>
 
-
-<script>
-    import router from './router';
-    import {APIService} from './http/APIService';
-    const apiService = new APIService();
-
-
-    export default{
-        name: 'App',
-        data: () => ({
-            authenticated: false,
-            dialog: false,
-            menu: [
-                { title: 'HomePage', url:"/"},
-                { title: 'ListPlayers', url:"/PlayerList"},
-                { title: 'ListTeams', url:"/TeamList"},
-                { title: 'Team', url:"/Team/compare/"},
-                { title: 'Player', url:"/Player/compare/"}
-            ],
-            teams: [],
-            team: { id: 'abc' },
-            players:[],
-            player: { id: 'abc'}
-        }),
-        mounted() {
-            apiService.getTeamList().then(response => {
-                this.authenticated = true;
-                console.log(response)
-            }).catch(error => {
-              
-              if (error.response.status === 401) {
-                    localStorage.removeItem('isAuthenticates');
-                    localStorage.removeItem('log_user');
-                    localStorage.removeItem('token');
-                    this.authenticated = false;
-                }
-            });
-            console.log('this.authenticated--'+this.authenticated);
-
-            apiService.getPlayerList().then(response => {
-                this.authenticated = true;
-                console.log(response)
-            }).catch(error => {
-             
-                if (error.response.status === 401) {
-                    localStorage.removeItem('isAuthenticates');
-                    localStorage.removeItem('log_user');
-                    localStorage.removeItem('token');
-                    this.authenticated = false;
-                }
-            });
-            console.log('this.authenticated--'+this.authenticated);
-        
-        },
-        
-
-
-        methods: {
-        //   getit(){
-        //     apiService.getTeamList().then(response => {
-        //         this.authenticated = true;
-        //         console.log('nait',response)
-        //     }).catch(error => {
-        //         if (error.response.status === 401) {
-        //             localStorage.removeItem('isAuthenticates');
-        //             localStorage.removeItem('log_user');
-        //             localStorage.removeItem('token');
-        //             this.authenticated = false;
-        //         }
-        //     });
-        //     console.log('this.authenticated--'+this.authenticated);
-        //     This code is being used for the technical manual tutorial
-        // },
-
-
-            logout() {
-                localStorage.removeItem('isAuthenticates');
-                localStorage.removeItem('log_user');
-                localStorage.removeItem('token');
-                this.authenticated = false;
-                // router.push('/');
-                window.location = "/"
-            },
-            login() {
-                router.push("/AuthUser");
-            },
-        }
-    };
-</script>
-
-
-
-<style lang="scss">
+<style>
 #app {
-  font-family: Gill Sans Ultra Bold, Gill Sans Ultra, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #000000;
-  font-size: 16;
+  color: #2c3e50;
 }
 
-nav {
+#nav {
   padding: 30px;
-  background-color: rgb(72, 58, 58);
-  color: #fffcf0;
-  text-shadow: 2px 2px 2px black;
+}
 
-  a {
-    font-weight: bold;
-    color: azure;
-    font-size:16;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-    &.router-link-exact-active {
-      color: #d3923e;
-    }
-  }
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import '@fortawesome/fontawesome-free/js/all'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
