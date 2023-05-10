@@ -26,6 +26,7 @@ export default {
                   <SidebarLink icon="fas fa-people-arrows" :to="{ name: 'Player', params: { id: 'compare' } }">Player Compare</SidebarLink>
                   <SidebarLink icon="fas fa-person" :to="{name:'ListPlayers'}">Player List</SidebarLink>
                   <SidebarLink icon="fas fa-sitemap" :to="{name:'ListTeams'}">Team List</SidebarLink>
+                  <SidebarLink icon="fas fa-book" :to="{name:'StatDefinitions'}">Definitions</SidebarLink>
                   <SidebarLink icon="fas fa-basketball" v-if="!authenticated" @click="login"  :to="{name: 'AuthUser'}">Log in</SidebarLink>
                   <SidebarLink icon="fas fa-list" v-if="!authenticated" @click="register" :to="{name: 'RegisterUser'}">Register</SidebarLink>
                   <SidebarLink icon="fas fa-list" v-if="authenticated" @click="favorite" :to="{name: 'TeamFavorites'}">Favorites</SidebarLink>

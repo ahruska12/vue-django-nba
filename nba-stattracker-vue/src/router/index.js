@@ -47,7 +47,12 @@ const routes = [
           path: '/RegisterUser',
           name: 'RegisterUser',
           component: () => import('../components/RegisterUser')
-      }
+      },
+      {
+        path: '/StatDefinitions',
+        name: 'StatDefinitions',
+        component: () => import('../components/StatDefinitions')
+    }
 ]
 
 
