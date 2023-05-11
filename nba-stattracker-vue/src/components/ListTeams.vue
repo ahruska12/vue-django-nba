@@ -62,7 +62,7 @@
                     <td>{{team.team_rpg}}</td>
                     <td>{{team.team_apg}}</td>
                     <td>{{team.opp_ppg}}</td>
-                    <button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>
+                    <!--<button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>-->
                 </tr>
                 </tbody>
           
@@ -112,7 +112,7 @@
                         <th scope="col">Team RPG</th>
                         <th scope="col">Team APG</th>
                         <th scope="col">OPP PPG</th>
-                        <th scope="col">Actions</th>
+                        <!--<th scope="col">Actions</th>-->
                     </tr>
                     </thead>
                     <tbody>
@@ -131,7 +131,7 @@
                         <td>{{team.team_rpg}}</td>
                         <td>{{team.team_apg}}</td>
                         <td>{{team.opp_ppg}}</td>
-                        <button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>
+                        <!--<button @click.prevent="favoriteTeam(team.team_id)" class="FavButton"> Favorite </button>-->
                     </tr>
                     </tbody>
                 </table>

@@ -54,7 +54,7 @@
                     <td>{{player.steals}}</td>
                     <td>{{player.blocks}}</td>
                     <td>{{player.games_played}}</td>
-                    <button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button>
+                    <!--<button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button>-->
                 </tr>
                 </tbody>
            
@@ -104,7 +104,7 @@
                         <th scope="col">Steals</th>
                         <th scope="col">Blocks</th>
                         <th scope="col">Games Played</th>
-                        <th scope="col">Actions</th>
+                        <!--<th scope="col">Actions</th> -->
                     </tr>
                     </thead>
                     <tbody>
@@ -119,7 +119,7 @@
                         <td>{{player.steals}}</td>
                         <td>{{player.blocks}}</td>
                         <td>{{player.games_played}}</td>
-                        <button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button>
+                        <!--<button @click.prevent="favoritePlayer(player.player_id)" class="FavButton"> Favorite </button> -->
                     </tr>
                     </tbody>
                 </table>
